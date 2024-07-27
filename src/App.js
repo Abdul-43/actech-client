@@ -4,6 +4,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 import Dashboard from './components/Dashboard';
 import { Route, Routes } from 'react-router-dom';
+import { PrivateRoutes } from './PrivateRoutes';
 
 
 function App() {
@@ -11,12 +12,11 @@ function App() {
     <>
       <div className="App">
         <Routes>
+          <Route element={<PrivateRoutes />}>
+            <Route path="/" element={<Dashboard />} />
+          </Route>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/" element={<Dashboard />} />
-          {/* <Route path="/admin" element={<Admin />} />
-          <Route path="/user-tasks" element={<UserTask />} /> */}
-          {/* <Route path="/" element={<Home />} /> */}
         </Routes>
       </div>
     </>

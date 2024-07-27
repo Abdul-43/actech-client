@@ -19,7 +19,7 @@ const Admin = () => {
         const resTasks = await axios.get(`${API}/api/tasks`, {
           headers: { Authorization: `Bearer ${token}` }
         });
-        console.log(resTasks)
+       
         setUsers(resUsers.data);
         setTasks(resTasks.data);
       } catch (error) {

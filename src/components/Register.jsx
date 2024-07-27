@@ -18,7 +18,6 @@ const Register = () => {
       navigate('/login');
     } catch (error) {
       setError('Error registering user');
-      console.error('Error registering', error);
     }
   };
 
